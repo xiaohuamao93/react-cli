@@ -1,0 +1,37 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "overrides": [
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": "latest",
+        "ecmaFeatures": {
+            // 支持 JSX 语法
+            "jsx": true 
+        }
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        // 出现 jsx 的地方必须 import React
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/exhaustive-deps": "warn",
+        // 组件必须写 propTypes
+        "react/prop-types": "off",
+        "react/jsx-uses-react": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+    }
+}

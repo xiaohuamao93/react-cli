@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "commonjs", 
+    "lib":[
+      "es6",
+      "dom"
+    ],
+    "jsx": "react-jsx",
+    "strict": true, // 指定是否启动所有类型检查
+    "baseUrl": "./",  // 用于设置解析非相对模块名称的基本目录
+    "paths": { // 用于设置模块名到基于baseUrl的路径映射
+      "@/*": ["./src/*"]
+    },
+    "esModuleInterop": true, // 通过导入内容创建命名空间，实现CommonJS和ES模块之间的互操作性
+    "noImplicitAny": true, // 如果没有设置明确的类型会报错
+    "resolveJsonModule": true // 导入json模块
+  }
+}

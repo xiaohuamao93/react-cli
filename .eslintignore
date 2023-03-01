@@ -1,0 +1,7 @@
+dist/
+node_modules/
+config/
+public/
+task/
+mock/
+gulpfile.js

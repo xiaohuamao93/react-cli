@@ -1,0 +1,7 @@
+/node_modules/
+/dist
+.history/
+.idea/
+
+# mac
+.DS_Store
