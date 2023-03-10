@@ -8,6 +8,10 @@ export const rootRouter: RouteObject[] = [
     path: "/",
     element: LazyLoad(lazy(() => import("@/pages/Home"))),
   },
+  {
+    path: "/page",
+    element: LazyLoad(lazy(() => import("@/pages/Editor"))),
+  },
 ];
 
 const Router = () => {

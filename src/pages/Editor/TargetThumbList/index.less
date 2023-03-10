@@ -1,0 +1,76 @@
+.sticky {
+  margin: 0 15px;
+  .target-thumb {
+    width: 158px;
+    background-color: #fff;
+    &-title {
+      padding: 8px 11px 16px;
+      .title {
+        margin-right: 4px;
+      }
+      .title-icon {
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+      .rotate {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-list {
+      width: 158px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 10px 12px;
+      .isActive {
+        background: rgba(41, 182, 176, 0.12);
+      }
+      li {
+        display: flex;
+        align-items: center;
+        height: 38px;
+        background: #f5f6f9;
+        border-radius: 2px;
+        padding-left: 7px;
+        margin-bottom: 4px;
+        line-height: 38px;
+        color: rgba(43, 46, 61, 0.84);
+        cursor: move;
+        img {
+          cursor: move;
+          margin-right: 10px;
+        }
+
+        span {
+          flex: 1 1 auto;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .delete-icon {
+          font-size: 16px;
+          opacity: 0;
+          transition: all 0.3s;
+        }
+        &:hover {
+          .delete-icon {
+            opacity: 1;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .scrollWrap {
+      max-height: calc(100vh - 175px);
+    }
+  }
+  .emptyList {
+    padding: 0 20px 20px;
+    font-size: 14px;
+    text-align: center;
+    color: rgba(43, 46, 61, 0.52);
+  }
+}

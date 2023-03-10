@@ -1,4 +1,5 @@
 const path = require("path");
+const WebpackBar = require("webpackbar");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
@@ -6,17 +7,31 @@ const commonConfig = {
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "../dist"),
-    filename: "main.js",
+    filename: "[name].[hash].js",
   },
   module: {
     rules: [
       {
-        test: /\.less$/i,
+        test: /\.(c|le)ss$/i,
         use: [
           // compiles Less to CSS
           "style-loader",
-          "css-loader",
-          "less-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: "[name]_[local]-[hash:base64:5]",
+              },
+            },
+          },
+          {
+            loader: "less-loader",
+            options: {
+              lessOptions: {
+                strictMath: true,
+              },
+            },
+          },
         ],
       },
       {
@@ -51,6 +66,7 @@ const commonConfig = {
       template: path.resolve(__dirname, "../public/index.html"),
     }),
     new CleanWebpackPlugin(),
+    new WebpackBar(),
   ],
 };
 
